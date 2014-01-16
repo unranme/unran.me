@@ -1,10 +1,7 @@
 @import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
-body{
-  font-family: "Alef Hebrew",
-  "Helvetica Neue",
-  Helvetica,
-  Arial,
-  sans-serif;
+body {
+  font-family: "Alef Hebrew", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
 }
 #main {
   text-align: center;
@@ -12,6 +9,19 @@ body{
   direction: rtl;
 }
 
+#logo {
+  color: green;
+  margin-bottom: 20px;
+  font-size: 17px;
+}
+#logo span {
+  color: red;
+}
+#allok {
+  background: url(img/rani.jpg) top center no-repeat;
+  -webkit-transform: scale(0.80);
+  height: 166px;
+}
 input {
   width: 250px;
   padding: 6px 12px;
@@ -36,4 +46,24 @@ input:focus {
 #results {
   list-style: none;
   padding: 0;
+}
+#results li {
+  color: red;
+}
+#results li .icon {
+  font-size: 20px;
+  margin-left: 7px;;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #E7E7E7;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+  color: #525151;
+  direction: rtl;
 }
