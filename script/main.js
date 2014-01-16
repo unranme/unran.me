@@ -5,14 +5,11 @@
   var resultsEl = document.getElementById('results');
   var instructionsEl = document.getElementById('instructions');
   var allokEl = document.getElementById('allok');
-
-  allokEl.style.display = 'none';
-  instructionsEl.style.display = 'none';
+  var footerEl = document.getElementById('footer');
 
   input.addEventListener('input', function oninput(e) {
     allokEl.style.display = 'none';
     instructionsEl.style.display = 'none';
-
 
     var value =  e.target.value;
     var match = false;
@@ -27,14 +24,12 @@
         }
       }
 
-      if (match) {
-        allokEl.style.display = 'none';
-      } else {
+      if (!match) {
         allokEl.style.display = 'block';
       }
-    } else {
+    }
+    else {
       instructionsEl.style.display = 'block';
-      allokEl.style.display = 'none';
     }
   });
 
@@ -58,5 +53,20 @@
     resultsEl.appendChild(li);
   }
 
-  input.focus();
+  if ('ontouchstart' in window) {
+    input.onfocus = function(e) {
+      footerEl.style.display = 'none';
+    };
+    input.onblur = function(e) {
+      setTimeout(function() {
+        if (input.value === '') {
+          footerEl.style.display = 'block';
+        }
+      }, 300);
+    };
+  } else {
+    input.focus();
+  }
+
+
 })(window.Data);
