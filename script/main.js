@@ -7,11 +7,18 @@
   var allokEl = document.getElementById('allok');
   var footerEl = document.getElementById('footer');
 
-  input.addEventListener('input', function oninput(e) {
+  if (input.addEventListener) {
+    input.addEventListener('keyup', oninput);
+  } else {
+    // IE < 9
+    input.attachEvent('onpropertychange', oninput);
+  }
+
+  function oninput() {
     allokEl.style.display = 'none';
     instructionsEl.style.display = 'none';
 
-    var value =  e.target.value;
+    var value = input.value;
     var match = false;
     clearResults();
 
@@ -27,11 +34,10 @@
       if (!match) {
         allokEl.style.display = 'block';
       }
-    }
-    else {
+    } else {
       instructionsEl.style.display = 'block';
     }
-  });
+  }
 
   function clearResults() {
     resultsEl.innerHTML = '';
@@ -46,8 +52,7 @@
     li.appendChild(icon);
 
     var label = document.createElement('span');
-    label.textContent = '⊘';
-    label.textContent = item;
+    label.innerHTML = item;
     li.appendChild(label);
 
     resultsEl.appendChild(li);
