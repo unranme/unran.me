@@ -41,7 +41,7 @@
     var li = document.createElement('li');
 
     var icon = document.createElement('span');
-    icon.textContent = '⊘';
+    icon.innerHTML = '&times;';
     icon.className = 'icon';
     li.appendChild(icon);
 
