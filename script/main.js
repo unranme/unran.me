@@ -53,7 +53,7 @@
     resultsEl.appendChild(li);
   }
 
-  if ('ontouchstart' in window) {
+  if (document.documentElement.clientHeight < 600) {
     input.onfocus = function(e) {
       footerEl.style.display = 'none';
     };
