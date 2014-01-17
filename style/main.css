@@ -21,6 +21,11 @@ body {
   display: none;
   color: green;
 }
+#notok {
+  display: none;
+  color: red;
+  margin-bottom: 0;
+}
 input {
   width: 250px;
   padding: 6px 12px;
@@ -45,6 +50,7 @@ input:focus {
 #results {
   list-style: none;
   padding: 0;
+  margin-top: 0;
 }
 #results li {
   color: red;

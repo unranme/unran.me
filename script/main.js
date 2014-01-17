@@ -5,6 +5,7 @@
   var resultsEl = document.getElementById('results');
   var instructionsEl = document.getElementById('instructions');
   var allokEl = document.getElementById('allok');
+  var notokEl = document.getElementById('notok');
   var footerEl = document.getElementById('footer');
 
   if (input.addEventListener) {
@@ -16,6 +17,7 @@
 
   function oninput() {
     allokEl.style.display = 'none';
+    notokEl.style.display = 'none';
     instructionsEl.style.display = 'none';
 
     var value = input.value;
@@ -31,7 +33,9 @@
         }
       }
 
-      if (!match) {
+      if (match) {
+        notokEl.style.display = 'block';
+      } else {
         allokEl.style.display = 'block';
       }
     } else {
