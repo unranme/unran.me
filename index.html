@@ -14,7 +14,7 @@
   <title>unran.me</title>
 </head>
 <body>
-  <div class="fb-like" data-href="http://unran.me" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+  <div class="fb-share-button" data-href="http://unran.me" data-type="button_count"></div>
 
   <div id="main">
     <div id="logo">un<span>ran</span>.me</div>
@@ -50,7 +50,7 @@
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 </body>
