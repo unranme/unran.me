@@ -1,6 +1,15 @@
 (function(Data){
   'use strict';
 
+  Array.prototype.map = Array.prototype.map || function(f) {
+    var r = [];
+    for (var i = 0; i < this.length; i++) r.push(f(this[i]));
+    return r
+  };
+  Array.prototype.forEach = Array.prototype.forEach || function(f) {
+    for (var i = 0; i < this.length; i++) f(this[i]);
+  };
+
   var input = document.getElementById('ac');
   var resultsEl = document.getElementById('results');
   var instructionsEl = document.getElementById('instructions');
@@ -28,15 +37,10 @@
     clearResults();
 
     if (value) {
-      for (var i = 0, l = Data.length; i < l; i++) {
-        var item = Data[i];
-        if (item.indexOf(value) > -1) {
-          addResult(item);
-          match = match || true;
-        }
-      }
+      var results = search(value);
 
-      if (match) {
+      if (results.length) {
+        results.forEach(addResult);
         notokEl.style.display = 'block';
       } else {
         allokEl.style.display = 'block';
@@ -46,6 +50,29 @@
     }
 
     reportQuery(value);
+  }
+
+  function search(query, quant) {
+    var resultRankPairs = [];
+
+    for (var i = 0, l = Data.length; i < l; i++) {
+      var item = Data[i];
+      var index = item.indexOf(query);
+      if (index > -1) {
+        resultRankPairs.push([item, index]);
+      }
+    }
+
+    var results = resultRankPairs.sort(cmp).map(function(result) {
+      return result[0];
+    }).slice(0, quant || resultRankPairs.length);
+
+    return results;
+  }
+
+  // order results: smaller index => higher ranking
+  function cmp(result1, result2) {
+    return result1[1] - result2[1];
   }
 
   function clearResults() {
