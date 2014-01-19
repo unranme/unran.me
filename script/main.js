@@ -18,6 +18,7 @@
   var footerEl = document.getElementById('footer');
 
   var REPORT_DELAY = 600;
+  var REPORT_MIN_LENGTH = 2;
   var reportTimeout = null;
 
   if (input.addEventListener) {
@@ -96,9 +97,12 @@
 
   function reportQuery(query) {
     clearTimeout(reportTimeout);
-    reportTimeout = setTimeout(function() {
-      ga('send', 'event', 'search', 'type', query);
-    }, REPORT_DELAY);
+
+    if (query.length >= REPORT_MIN_LENGTH) {
+      reportTimeout = setTimeout(function() {
+        ga('send', 'event', 'search', 'type', query);
+      }, REPORT_DELAY);
+    }
   }
 
   if (document.documentElement.clientHeight < 600) {
