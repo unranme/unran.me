@@ -8,6 +8,9 @@
   var notokEl = document.getElementById('notok');
   var footerEl = document.getElementById('footer');
 
+  var REPORT_DELAY = 600;
+  var reportTimeout = null;
+
   if (input.addEventListener) {
     input.addEventListener('keyup', oninput);
   } else {
@@ -41,6 +44,8 @@
     } else {
       instructionsEl.style.display = 'block';
     }
+
+    reportQuery(value);
   }
 
   function clearResults() {
@@ -60,6 +65,13 @@
     li.appendChild(label);
 
     resultsEl.appendChild(li);
+  }
+
+  function reportQuery(query) {
+    clearTimeout(reportTimeout);
+    reportTimeout = setTimeout(function() {
+      ga('send', 'event', 'search', 'type', query);
+    }, REPORT_DELAY);
   }
 
   if (document.documentElement.clientHeight < 600) {
