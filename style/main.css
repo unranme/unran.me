@@ -3,6 +3,11 @@ body {
   font-family: "Alef Hebrew", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
 }
+
+#social div:first-child {
+  min-height: 28px;
+}
+
 #main {
   text-align: center;
   margin-top: 5%;
