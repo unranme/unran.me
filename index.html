@@ -15,23 +15,22 @@
 </head>
 <body>
 
-  <div id="social">
-    <div>
-      <div class="fb-share-button" data-href="http://unran.me" data-type="button_count"></div>
-    </div>
-    <div>
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://unran.me" data-text="מעכשיו עושים קניות עם רשימת לקוחות רהב תקשורת בסמארטפון" data-hashtags="unranme">Tweet</a>
-    </div>
-  </div>
-
   <div id="main">
-    <div id="logo">un<span>ran</span>.me</div>
-    <input type="text" id="ac" placeholder="שם חברה…">
-    <p id="instructions">התחילו להקליד</p>
-    <p id="allok">&#10004; לא מיוחצן על ידי רני רהב</p>
-    <p id="notok">מיוחצנים על ידי רני רהב:</p>
+    <div id="content">
+      <div id="header">
+        <div id="logo">un<span>ran</span>.me</div>
+        <div id="fb">
+          <div class="fb-share-button" data-href="http://unran.me" data-type="button_count"></div>
+        </div>
+      </div>
 
-    <ul id="results"></ul>
+      <input type="text" id="ac" placeholder="שם חברה…">
+      <p id="instructions">התחילו להקליד</p>
+      <p id="allok">&#10004; לא מיוחצן על ידי רני רהב</p>
+      <p id="notok">מיוחצנים על ידי רני רהב:</p>
+
+      <ul id="results"></ul>
+    </div>
   </div>
 
   <div id="footer">
@@ -53,7 +52,6 @@
 
   </script>
 
-  <div id="fb-root"></div>
   <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -62,6 +60,5 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </body>
 </html>

@@ -105,20 +105,6 @@
     }
   }
 
-  if (document.documentElement.clientHeight < 600) {
-    input.onfocus = function(e) {
-      footerEl.style.display = 'none';
-    };
-    input.onblur = function(e) {
-      setTimeout(function() {
-        if (input.value === '') {
-          footerEl.style.display = 'block';
-        }
-      }, 300);
-    };
-  } else {
-    input.focus();
-  }
-
+  input.focus();
 
 })(window.Data);

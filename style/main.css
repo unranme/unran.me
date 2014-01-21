@@ -1,27 +1,46 @@
 @import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
-body {
+
+html, body {
+  height: 100%;
+  margin: 0;
   font-family: "Alef Hebrew", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
-}
-
-#social div:first-child {
-  min-height: 28px;
+  background: #E7E7E7;
 }
 
 #main {
   text-align: center;
-  margin-top: 5%;
   direction: rtl;
+  min-height: 100%;
+  background: white;
+}
+
+#content {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+#header {
+  margin-bottom: 20px;
+}
+
+#fb {
+  height: 28px;
 }
 
 #logo {
   color: green;
-  margin-bottom: 20px;
   font-size: 17px;
+  margin-bottom: 15px;
 }
-#logo span {
+#logo > span {
   color: red;
 }
+
+#instructions {
+  min-height: 10px;
+}
+
 #allok {
   display: none;
   color: green;
@@ -31,6 +50,7 @@ body {
   color: red;
   margin-bottom: 0;
 }
+
 input {
   width: 250px;
   padding: 6px 12px;
@@ -56,6 +76,7 @@ input:focus {
   list-style: none;
   padding: 0;
   margin-top: 0;
+  padding-bottom: 100px;
 }
 #results li {
   color: red;
@@ -66,14 +87,36 @@ input:focus {
 }
 
 #footer {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  /*sticky footer*/
+  position: relative;
+  padding: 10px;
+
   background: #E7E7E7;
   text-align: center;
   font-size: 11px;
-  padding: 10px;
   color: #525151;
   direction: rtl;
+  height: 50px;
+  margin-top: -70px;
+}
+
+@media all and (max-width: 730px) and (min-width: 490px){
+  #footer {
+    height: 60px;
+    margin-top: -80px;
+  }
+}
+
+@media all and (max-width: 490px) {
+  #footer {
+    height: 70px;
+    margin-top: -90px;
+  }
+}
+
+@media all and (max-width: 385px) {
+  #footer {
+    height: 90px;
+    margin-top: -110px;
+  }
 }
