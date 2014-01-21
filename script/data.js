@@ -125,5 +125,6 @@ window.Data = [
   'MAC ישראל (מאק איפור)',
   'MONDAY (דגני בוקר מאנדיי)',
   'Pull and Bear ישראל',
-  'ZER4U (זר פור יו)'
+  'ZER4U (זר פור יו)',
+  'קרולינה למקה | CAROLINA LEMKE'
 ];
